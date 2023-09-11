@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "f71ff1a5-528c-4d4d-a8a5-71ba38e27eec",
+		"name": "Api-Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22348176",
+		"_collection_link": "https://www.postman.com/braiansins/workspace/postman-collections/collection/22348176-f71ff1a5-528c-4d4d-a8a5-71ba38e27eec?action=share&source=collection_link&creator=22348176"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Teclado de tablet\",\n    \"description\": \"Teclado de tablet\",\n    \"price\": 39.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Teclado de telefone\",\n    \"description\": \"Teclado de telefone\",\n    \"price\": 100.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/products/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/products/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "doOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":5,\n    \"products\":[4,10],\n    \"deliveryAddress\":{\n        \"zipCode\":\"96845-023\",\n        \"street\":\"Rua Bela Vista\",\n        \"complement\":\"Casa, 333\",\n        \"district\":\"Senai\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8200/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8200",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8200/orders/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8200",
+							"path": [
+								"orders",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8200/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8200",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"SHIPPED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8200/orders/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8200",
+							"path": [
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"braian\",\n    \"username\":\"dante\",\n    \"email\":\"bsins125@gmail.com\",\n    \"password\":\"Dante123@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"usernameOrEmail\":\"dante\",\n    \"password\":\"Dante123@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8100/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

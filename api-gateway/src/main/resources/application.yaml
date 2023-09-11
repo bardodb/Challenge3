@@ -1,0 +1,47 @@
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: PRODUCT-SERVICE
+          uri: http://localhost:8000
+          predicates:
+            - Path=/products/**
+          filters:
+            - AuthenticationFilter
+        - id: ORDER-SERVICE
+          uri: http://localhost:8200
+          predicates:
+            - Path=/orders/**
+          filters:
+            - AuthenticationFilter
+        - id: USER-SERVICE
+          uri: http://localhost:8100
+          predicates:
+            - Path=/users/**
+          filters:
+            - AuthenticationFilter
+        - id: LOGIN-SERVICE
+          uri: http://localhost:8100
+          predicates:
+            - Path=/login/**
+        - id: ADDRESS-SERVICE
+          uri: http://localhost:8200
+          predicates:
+            - Path=/address
+
+
+
+
+app:
+  jwt-secret: 7418df96f38366fa21b8b75a23f8ae666ac936824dfe4d172f9b03f8fbce5a1c
+
+server:
+  port: 9191
